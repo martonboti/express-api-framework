@@ -1,23 +1,10 @@
-const _ = require('lodash');
-
 const { AppAction } = require('./../Common/AppAction');
 const { Example } = require('./../../models/Example');
+const ValidationHelper = require('./../../helpers/ValidationHelper');
 
 class PostExample extends AppAction {
   executeAction(req) {
-    return new Promise(async (resolve, reject) => {
-      try {
-        const body = _.pick(req.body, ['text', 'completed']);
-        const example = new Example(body);
-        await example.save();
-        resolve(example);
-      } catch (e) {
-        reject({
-          code: 400,
-          message: e.message
-        });
-      }
-    });
+    return ValidationHelper.validateAndSave(req, Example);
   }
 }
 

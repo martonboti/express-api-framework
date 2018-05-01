@@ -4,7 +4,12 @@ class AppAction {
       const result = await this.executeAction(req);
       res.send({ data: result });
     } catch (e) {
-      res.status(e.code).send(e);
+      res.status(e.code).send({
+        error: {
+          status_code: e.code,
+          message: e.message,
+        }
+      });
     }
   }
   executeAction() {
