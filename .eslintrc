@@ -10,10 +10,13 @@
     "mocha": true
   },
   "rules": {
-    "comma-dangle": [
-      "error",
-      "never"
-    ],
+    "comma-dangle": ["error", {
+      "arrays": "ignore",
+      "objects": "ignore",
+      "imports": "never",
+      "exports": "never",
+      "functions": "never"
+    }],
     "no-unused-vars": [
       "warn",
       {
@@ -29,6 +32,7 @@
           "createResponse"
         ]
       }
-    ]
+    ],
+    "prefer-promise-reject-errors": "off"
   }
 }
