@@ -1,0 +1,34 @@
+{
+  "extends": "airbnb",
+  "parserOptions": {
+    "ecmaVersion": 9
+  },
+  "env": {
+    "node": true,
+    "browser": true,
+    "es6": true,
+    "mocha": true
+  },
+  "rules": {
+    "comma-dangle": [
+      "error",
+      "never"
+    ],
+    "no-unused-vars": [
+      "warn",
+      {
+        "vars": "local",
+        "args": "none"
+      }
+    ],
+    "class-methods-use-this": [
+      "warn", 
+      { 
+        "exceptMethods": [
+          "executeAction",
+          "createResponse"
+        ]
+      }
+    ]
+  }
+}
