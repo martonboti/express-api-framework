@@ -5,7 +5,8 @@ const ExampleSchema = new mongoose.Schema({
     type: String,
     required: true,
     trim: true,
-    minlength: 1
+    minlength: 1,
+    unique: true
   },
   completed: {
     type: Boolean,

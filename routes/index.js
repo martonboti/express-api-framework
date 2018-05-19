@@ -3,11 +3,9 @@ const express = require('express');
 const router = express.Router();
 
 const PingController = require('../controllers/PingController');
-const ExampleController = require('../controllers/ExampleController');
+const { Authenticate } = require('../middleware/Authenticate');
 
 router.get('/', PingController.getPing);
-router.get('/ping', PingController.getPing);
-// example routes
-router.post('/post-data', ExampleController.postData);
+router.get('/ping', Authenticate, PingController.getPing);
 
 module.exports = router;

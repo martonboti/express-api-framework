@@ -10,6 +10,9 @@
     "mocha": true
   },
   "rules": {
+    "object-shorthand": ["warn"],
+    "func-names": ["warn"],
+    "consistent-return": ["warn"],
     "comma-dangle": ["error", {
       "arrays": "ignore",
       "objects": "ignore",
@@ -33,6 +36,7 @@
         ]
       }
     ],
-    "prefer-promise-reject-errors": "off"
+    "prefer-promise-reject-errors": "off",
+    "linebreak-style": "off"
   }
 }
