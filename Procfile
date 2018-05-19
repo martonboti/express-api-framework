@@ -1,1 +1,1 @@
-web: node ./node_modules/.bin/pm2-runtime app.js -i 6
+web: node pm2
