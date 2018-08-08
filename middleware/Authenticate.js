@@ -5,7 +5,7 @@ const Authenticate = (req, res, next) => {
 
   Apikeys.findOne({ key: value }).then((user) => {
     if (!user) {
-      return Promise.reject();
+      throw new Error('Invalid api key');
     }
     return next();
   }).catch((e) => {

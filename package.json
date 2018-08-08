@@ -5,7 +5,7 @@
   "author": "Marton Boti",
   "license": "MIT",
   "scripts": {
-    "start": "node ./node_modules/.bin/pm2-runtime app.js -i 6",
+    "start": "node ./node_modules/.bin/pm2-runtime app.js -i max",
     "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha --timeout 15000 tests/**/*.test.js",
     "test-watch": "nodemon --exec \"npm test\""
   },

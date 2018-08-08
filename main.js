@@ -9,7 +9,7 @@ pm2.connect(() => {
     exec_mode: 'cluster',
     instances,
     max_memory_restart: `${maxMemory}M`, // Auto-restart if process takes more than XXmo
-  }, (err) => {
+  }, (err) => { // eslint-disable-line consistent-return
     if (err) return console.error('Error while launching applications', err.stack || err);
     console.log(`PM2 and application has been succesfully started with ${instances} instances.`);
 
