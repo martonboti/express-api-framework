@@ -7,6 +7,7 @@ const Authenticate = (req, res, next) => {
     if (!user) {
       throw new Error('Invalid api key');
     }
+    console.log(`Key: ${value} Accessing: ${req.method} ${req.url}`); // eslint-disable-line
     return next();
   }).catch((e) => {
     res.status(401).send({
