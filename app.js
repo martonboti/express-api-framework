@@ -16,7 +16,7 @@ app.use('/', index);
 app.use((req, res) => {
   res.status(404).send({
     error: {
-      message: '404 Not Found.',
+      message: '404 Not Found',
       status_code: 404
     }
   });
